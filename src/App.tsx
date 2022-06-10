@@ -20,7 +20,7 @@ export function App() {
     setNewTaskText(event.currentTarget.value)
   }
 
-  function handleCreateNewTodo(event: FormEvent<HTMLFormElement>) {
+  function handleCreateNewTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setTasks([...tasks, {id: uuidv4(), title: newTaskText, isCompleted: false}])
     setNewTaskText('')
@@ -37,7 +37,7 @@ export function App() {
     <>
       <Header />
       <div className={styles.wrapper}>
-        <form onSubmit={handleCreateNewTodo} >
+        <form onSubmit={handleCreateNewTask} className={styles.taskForm}>
           <input
             value={newTaskText}
             onChange={handleNewTodoChange}
