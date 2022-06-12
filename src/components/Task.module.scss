@@ -1,0 +1,51 @@
+.task {
+  padding: 1rem;
+  background: var(--gray-500);
+  font-size: 0.875rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  span {
+    flex: 1;
+  }
+  .checked, .unChecked {
+    transition: filter 0.2s;
+    &:hover {
+      filter: brightness(.8);
+    }
+  }
+  .checked {
+    color: var(--gray-100);
+    background: var(--purple-dark);
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .unChecked {
+    color: var(--blue);
+  }
+  .trash {
+    color: var(--gray-300);
+    &:hover {
+      color: var(--danger);
+    }
+  }
+  & + .task {
+    margin-top: .75rem;
+  }
+  .lineThrough {
+    text-decoration: line-through;
+    color: var(--gray-300);
+  }
+  .lineNormal {
+    text-decoration: none;
+    color: var(--gray-100);
+  }
+}
